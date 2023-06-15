@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-    <script type="moudle" src="index.js"></script>
+   
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+  
     <style>
-        h1 {
+       h1 {
             font-family: 'Arial', sans-serif;
             text-align: center;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: pulsate 2s ease-in-out infinite;
 
-        }
+        } 
         @keyframes pulsate {
             0% {
                 transform: scale(1);
@@ -24,23 +25,21 @@
             100% {
                 transform: scale(1);
             }
-        }
+        } 
         canvas {
              display: block;
-            margin: 40px auto;
-           width: 600px;
-           height: 600px;
-           
+            margin: 10px auto; 
             
-           background-image: url("imgsound/sw12.jpg");
+            
+           /* background-image: url("imgsound/sw12.png"); */
            
-           
-            box-shadow: 0px 20px  100px rgba(3, 236, 232, 0.5);
+       
+            box-shadow: 0px 20px  100px rgba(3, 236, 232, 0.5); 
             border-radius: 50px;
- 
-        }
-        body {
-            background-image: url("imgsound/swb.jpg");
+  
+        } 
+         body {
+            background-image: url(" imgsound/swb.png");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -49,12 +48,71 @@
             height: 100vh;
             overflow: hidden;
         }
+   
+
+ 
+        .boba {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+            padding: 20px;
+            width: calc(1000px / 9);
+            height: 130px;
+            background: url("imgsound/boba4.png  ");
+            animation: animate 3s steps(9) infinite;
+            animation-fill-mode: forwards;
+        } 
+    
         
+@keyframes animate
+{
+  from{
+    background-position :0;
+  }
+  to
+  {
+    background-position: -1452px;
+  } 
+
+} 
+audio {
+            
+            width: 100px;
+           
+           
+        }
+
+#startButton {
+            display: block;
+            /* margin: 20px auto; */
+            padding:10px 10px;
+            font-size: 16px;
+            background-color: #0a0719;
+            color: rgb(205, 205, 208);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+    
+
     </style>
 </head>
 <body >
-   
-    <h1 style ="color:rgb(48, 179, 182);" >Star War Space Game  </h1>
+    
+    <button id="startButton">Start( w,a,d,s move ,' f 'attck)</button>
+
+    
+    
+    <h1 style ="color:rgb(9, 225, 228);" > Galactic War </h1>
+
+    <div class="boba"> </div> 
     <canvas id="starwar"></canvas>
+    <audio controls  autoplay >
+        <source src ="imgsound\starwar.mp3">
+    </audio>
+  
+    <script type="module" src="script.js"></script>
 </body>
 </html>
